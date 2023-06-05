@@ -40,12 +40,12 @@ async function transcribe(filename, openai) {
   const file = fs.createReadStream(filename);
 
   const response = await openai.createTranscription(
-    file, // The audio file to transcribe.
-    "whisper-1", // The model to use for transcription.
-    undefined, // The prompt to use for transcription.
-    "json", // The format of the transcription.
-    1, // Temperature
-    "es" // Language
+    file, 
+    "whisper-1", 
+    undefined, 
+    "json", 
+    1, 
+    "es" 
   );
   return response.data.text;
 }
