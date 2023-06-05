@@ -4,7 +4,10 @@
   "description": "",
   "main": "config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "voice": "node index.js voice",
+    "text": "node index.js text",
+    "file": "node index.js file"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +17,9 @@
     "dotenv": "^16.1.3",
     "fluent-ffmpeg": "^2.1.2",
     "mic": "^2.1.2",
+    "mongodb": "^5.6.0",
     "openai": "^3.2.1",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "socket.io": "^4.6.2"
   }
 }

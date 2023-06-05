@@ -10,12 +10,14 @@ async function main() {
   const entryMethod = process.argv[2] || "text";
 
   await handleEntryMethod(container, entryMethod, audioFilename, staticAudio);
+  // creo una instancia del contenedor y llamo a las funciones necesarias según el método de entrada especificado.
 }
 
 main().catch((error) => {
   if (error.response) {
     console.log(error.response.status);
     console.log(error.response.data);
+    // Si el error tiene una propiedad de respuesta, el código de estado HTTP y los datos de respuesta se imprimen en la consola.
   } else {
     console.error(error.message);
   }

@@ -1,9 +1,16 @@
 // conversation.js
 const readlineSync = require("readline-sync");
 const { recordAudio, transcribe } = require("../services/audioService");
+const { saveMessage, getMessages } = require("../repository/repository"); // borrar
 
 async function startConversation(transcription, openai, entryMethod) {
+  const storedMessages = await getMessages(); // obtengo el historial de mensajes para dar contexto
   const history = [];
+
+  for (let i = 0; i < storedMessages.length; i++) {
+    history.push([storedMessages[0].input_text, storedMessages[0].completion_text])
+  }
+
   let user_input_again = "";
   const audioFilename = process.env.AUDIO_FILE_NAME;
 
@@ -34,6 +41,7 @@ async function startConversation(transcription, openai, entryMethod) {
     }
 
     const messages = [];
+    // const messages = await getMessages(); // borrar
     for (const [input_text, completion_text] of history) {
       messages.push({ role: "system", content: "Eres un ayudante muy útil." }); // comportamiento de la IA
       messages.push({ role: "user", content: input_text });
@@ -55,6 +63,7 @@ async function startConversation(transcription, openai, entryMethod) {
       console.log("\nAsistente: " + completion_text);
 
       history.push([user_input, completion_text]);
+      await saveMessage({ input_text: user_input, completion_text }); // guardo el ultimo mensaje generado
 
       user_input_again = readlineSync.question(
         "\n¿Le gustaría continuar la conversación? (Y/N): "
