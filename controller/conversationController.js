@@ -1,12 +1,10 @@
-// conversation.js
 const readlineSync = require("readline-sync");
 const { recordAudio, transcribe } = require("../services/audioService");
-const { saveMessage, getMessages } = require("../repository/repository"); // borrar
+const { saveMessage, getMessages } = require("../repository/repository");
 
 async function startConversation(transcription, openai, entryMethod) {
   const storedMessages = await getMessages(); // obtengo el historial de mensajes para dar contexto
   const history = [];
-
   for (let i = 0; i < storedMessages.length; i++) {
     history.push([storedMessages[0].input_text, storedMessages[0].completion_text])
   }
@@ -41,7 +39,6 @@ async function startConversation(transcription, openai, entryMethod) {
     }
 
     const messages = [];
-    // const messages = await getMessages(); // borrar
     for (const [input_text, completion_text] of history) {
       messages.push({ role: "system", content: "Eres un ayudante muy útil." }); // comportamiento de la IA
       messages.push({ role: "user", content: input_text });

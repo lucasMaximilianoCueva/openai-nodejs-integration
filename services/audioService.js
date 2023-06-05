@@ -1,4 +1,3 @@
-// audio.js
 const fs = require("fs");
 const mic = require("mic");
 const { Readable } = require("stream");
@@ -40,12 +39,12 @@ async function transcribe(filename, openai) {
   const file = fs.createReadStream(filename);
 
   const response = await openai.createTranscription(
-    file, 
-    "whisper-1", 
-    undefined, 
-    "json", 
-    1, 
-    "es" 
+    file, // The audio file to transcribe.
+    "whisper-1", // The model to use for transcription.
+    undefined, // The prompt to use for transcription.
+    "json", // The format of the transcription.
+    1, // Temperature
+    "es" // Language
   );
   return response.data.text;
 }

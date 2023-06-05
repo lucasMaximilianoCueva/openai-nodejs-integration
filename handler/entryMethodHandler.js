@@ -1,4 +1,3 @@
-// entryMethodHandler.js
 const handleEntryMethod = async (container, entryMethod, audioFilename, staticAudio) => {
 
   switch (entryMethod) {

@@ -1,4 +1,3 @@
-// index.js
 const { createContainer } = require("./container/container");
 const { handleEntryMethod } = require("./handler/entryMethodHandler");
 
@@ -17,7 +16,6 @@ main().catch((error) => {
   if (error.response) {
     console.log(error.response.status);
     console.log(error.response.data);
-    // Si el error tiene una propiedad de respuesta, el código de estado HTTP y los datos de respuesta se imprimen en la consola.
   } else {
     console.error(error.message);
   }

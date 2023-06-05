@@ -1,4 +1,3 @@
-// config.js
 const dotenv = require("dotenv");
 const ffmpeg = require("fluent-ffmpeg");
 const ffmpegPath = require("@ffmpeg-installer/ffmpeg").path;
