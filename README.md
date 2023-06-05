@@ -2,7 +2,7 @@
 
 Aplicación de Node.js que integra la API de OpenAI para crear un chatbot que pueda entender y responder a las consultas del usuario en lenguaje natural, y utiliza Whisper para transcribir voz a texto, permitiendo al modelo de lenguaje responder.
 
-## Iniciar el proyect
+## Iniciar el proyecto
 ```http
 npm install
 ```
