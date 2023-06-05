@@ -30,6 +30,7 @@ async function recordAudio(filename) {
     });
 
     micInputStream.on("error", (err) => {
+      console.log("[Error en la recepción de audio, por favor reinicie la app.]")
       reject(err);
     });
   });

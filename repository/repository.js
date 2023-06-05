@@ -11,9 +11,9 @@ async function saveMessage(message) {
 
     await collection.insertOne(message);
 
-    console.log("[Mensaje guardado exitosamente en MongoDB Atlas]");
+    console.log("\n[Mensaje guardado exitosamente en MongoDB Atlas]");
   } catch (error) {
-    console.error("Error al guardar el mensaje en MongoDB Atlas:", error);
+    console.error("\nError al guardar el mensaje en MongoDB Atlas:", error);
   } finally {
     await client.close();
   }

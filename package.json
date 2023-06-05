@@ -4,10 +4,7 @@
   "description": "",
   "main": "config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "voice": "node index.js voice",
-    "text": "node index.js text",
-    "file": "node index.js file"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

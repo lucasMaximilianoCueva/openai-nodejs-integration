@@ -8,9 +8,9 @@ npm install
 ```
 Puede iniciar el proyecto en 3 modos diferentes: "voice", "text" y "file". Por defecto, se utiliza "text".
 ```http
-npm run voice
-npm run text
-npm run file
+node index.js voice
+node index.js text
+node index.js file
 node index.js
 ```
 
